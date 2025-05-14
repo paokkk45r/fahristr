@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Ripper - Dashboard Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #1a1a2e;
+      color: rgb(0, 0, 0);
+      font-family: 'coc', sans-serif;
+    }
+
+    @font-face {
+      font-family: 'coc';
+      src: url('/fonts/coc.ttf') format('truetype');
+    }   
+    .sidebar {
+      background-color: #0f0f1f;
+      height: 100vh;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      color: #ffc107;
+      text-decoration: none;
+      display: block;
+      padding: 10px 15px;
+      transition: 0.3s;
+    }
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #ffc107;
+      color: black;
+      border-radius: 5px;
+    }
+    .table th,
+    .table td {
+      vertical-align: middle;
+    }
+    img.img-thumbnail {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 sidebar">
+      <h4 class="text-center text-warning mb-4">FAHRI STORE</h4>
+      <a href="/asset/file/dashboardadmin.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
+      <a href="/asset/file/produkadmin.html"><i class="bi bi-box-seam me-2"></i>Produk</a>
+      <a href="/asset/file/datamodal.html"><i class="bi bi-cash-stack me-2"></i>Data Modal</a>
+      <a href="/asset/file/ripper.html" class="active"><i class="bi bi-emoji-angry me-2"></i>Data Ripper</a>
+      <a href="#" onclick="logout()"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
+    </div>
+
+    <!-- Content -->
+    <div class="col-md-10 p-4">
+      <h3 class="text-warning mb-4">Data Ripper / HB</h3>
+      <button class="btn btn-warning mb-3" data-bs-toggle="modal" data-bs-target="#addRipperModal">
+        <i class="bi bi-plus-circle"></i> Tambah Ripper
+      </button>
+
+      <div class="table-responsive">
+        <table class="table table-dark table-striped">
+          <thead class="table-warning text-dark">
+            <tr>
+              <th>Foto</th>
+              <th>Jenis</th>
+              <th>Nominal</th>
+              <th>Penjelasan</th>
+              <th>Nomor</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="ripperTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Tambah Ripper -->
+<div class="modal fade" id="addRipperModal" tabindex="-1" aria-labelledby="addRipperModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form id="ripperForm" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addRipperModalLabel">Tambah Data Ripper</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="img" class="form-label">Link Gambar</label>
+          <input type="text" class="form-control" id="img" required>
+        </div>
+        <div class="mb-3">
+          <label for="kronologi1" class="form-label">Jenis (ripper / HB)</label>
+          <select class="form-control" id="kronologi1" required>
+            <option value="ripper">Ripper</option>
+            <option value="HB">HB</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="nominal" class="form-label">Nominal</label>
+          <input type="number" class="form-control" id="nominal" required>
+        </div>
+        <div class="mb-3">
+          <label for="kronologi2" class="form-label">Penjelasan</label>
+          <textarea class="form-control" id="kronologi2" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="nomer" class="form-label">Nomor WhatsApp</label>
+          <input type="text" class="form-control" id="nomer" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-warning">Tambah</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+const _0x2f6acb=_0x1af2;function _0x1af2(_0x83ef18,_0x40252d){const _0x3ffa95=_0x3ffa();return _0x1af2=function(_0x1af294,_0x474b23){_0x1af294=_0x1af294-0x1aa;let _0x46baa6=_0x3ffa95[_0x1af294];return _0x46baa6;},_0x1af2(_0x83ef18,_0x40252d);}(function(_0x296a31,_0x2bf8bb){const _0x4e0541=_0x1af2,_0x52f0dd=_0x296a31();while(!![]){try{const _0xd31f79=-parseInt(_0x4e0541(0x1b3))/0x1*(-parseInt(_0x4e0541(0x1c4))/0x2)+parseInt(_0x4e0541(0x1ad))/0x3+parseInt(_0x4e0541(0x1db))/0x4*(parseInt(_0x4e0541(0x1c1))/0x5)+-parseInt(_0x4e0541(0x1d4))/0x6*(-parseInt(_0x4e0541(0x1be))/0x7)+parseInt(_0x4e0541(0x1cc))/0x8+parseInt(_0x4e0541(0x1d2))/0x9*(parseInt(_0x4e0541(0x1d7))/0xa)+parseInt(_0x4e0541(0x1b7))/0xb*(-parseInt(_0x4e0541(0x1c0))/0xc);if(_0xd31f79===_0x2bf8bb)break;else _0x52f0dd['push'](_0x52f0dd['shift']());}catch(_0x134ae2){_0x52f0dd['push'](_0x52f0dd['shift']());}}}(_0x3ffa,0x26486));const firebaseConfig={'apiKey':_0x2f6acb(0x1c2),'authDomain':'fahristore-6826b.firebaseapp.com','projectId':_0x2f6acb(0x1e2),'storageBucket':_0x2f6acb(0x1b0),'messagingSenderId':'77190526090','appId':_0x2f6acb(0x1e0),'databaseURL':'https://fahristore-6826b-default-rtdb.firebaseio.com/'};firebase[_0x2f6acb(0x1d1)](firebaseConfig);const auth=firebase[_0x2f6acb(0x1d9)](),db=firebase[_0x2f6acb(0x1ae)]();auth[_0x2f6acb(0x1b4)](_0x1fc512=>{const _0x27493a=_0x2f6acb;!_0x1fc512&&(window[_0x27493a(0x1de)][_0x27493a(0x1bf)]=_0x27493a(0x1ba));});function logout(){const _0x1ef433=_0x2f6acb;auth[_0x1ef433(0x1c8)]()[_0x1ef433(0x1d5)](()=>{const _0x4ea32f=_0x1ef433;window[_0x4ea32f(0x1de)]['href']=_0x4ea32f(0x1ba);});}const ripperForm=document['getElementById']('ripperForm');ripperForm['addEventListener'](_0x2f6acb(0x1ca),function(_0x2a02f8){const _0x2b9bb1=_0x2f6acb;_0x2a02f8[_0x2b9bb1(0x1df)]();const _0x403363={'img':document[_0x2b9bb1(0x1d3)]('img')[_0x2b9bb1(0x1c9)],'kronologi1':document[_0x2b9bb1(0x1d3)](_0x2b9bb1(0x1cd))[_0x2b9bb1(0x1c9)],'nominal':document[_0x2b9bb1(0x1d3)](_0x2b9bb1(0x1aa))[_0x2b9bb1(0x1c9)],'kronologi2':document['getElementById'](_0x2b9bb1(0x1c6))['value'],'nomer':document[_0x2b9bb1(0x1d3)](_0x2b9bb1(0x1dd))[_0x2b9bb1(0x1c9)]};db['ref'](_0x2b9bb1(0x1d6))[_0x2b9bb1(0x1b9)](_0x403363)[_0x2b9bb1(0x1d5)](()=>{const _0x5bae41=_0x2b9bb1;alert('Data\x20ripper\x20berhasil\x20ditambahkan!'),ripperForm['reset'](),bootstrap[_0x5bae41(0x1da)]['getInstance'](document[_0x5bae41(0x1d3)]('addRipperModal'))[_0x5bae41(0x1b6)](),location['reload']();})[_0x2b9bb1(0x1ab)](_0x1bd624=>{const _0x4e721a=_0x2b9bb1;alert(_0x4e721a(0x1ac)),console['error'](_0x1bd624);});});function formatRupiah(_0x429d8f){const _0x594f4e=_0x2f6acb;return'Rp\x20'+Number(_0x429d8f)[_0x594f4e(0x1e1)](_0x594f4e(0x1b8));}function _0x3ffa(){const _0x4b4081=['ref','4LDnyVJ','img','kronologi2','ripper/','signOut','value','submit','key','2131336jXUCxS','kronologi1','</td>\x0a\x20\x20\x20\x20\x20\x20<td><a\x20href=\x22https://wa.me/','remove','</a></td>\x0a\x20\x20\x20\x20\x20\x20<td><button\x20class=\x22btn\x20btn-danger\x20btn-sm\x22\x20onclick=\x22deleteRipper(\x27','initializeApp','63iTrfof','getElementById','144JPFvvd','then','ripper','270310scJlzu','ripperTableBody','auth','Modal','44ZGSVVt','Gagal\x20menghapus\x20data:','nomer','location','preventDefault','1:77190526090:web:0ddef0198bf71234ee2973','toLocaleString','fahristore-6826b','nominal','catch','Gagal\x20menambahkan\x20data.','409617EBchFb','database','\x0a\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20<td><img\x20src=\x22','fahristore-6826b.appspot.com','forEach','Yakin\x20ingin\x20menghapus\x20data\x20ini?','150652RoigxV','onAuthStateChanged','</td>\x0a\x20\x20\x20\x20\x20\x20<td>','hide','2838946NCrNhH','id-ID','push','/index.html','Data\x20berhasil\x20dihapus.','innerHTML','\x27)\x22><i\x20class=\x22bi\x20bi-trash\x22></i>\x20Hapus</button></td>\x0a\x20\x20\x20\x20</tr>\x0a\x20\x20','64309PxEDdp','href','48CjqpaM','34175BUMpru','AIzaSyCdEHS5l3KBhYDCiw2OpFn_2vThBiXh0AQ'];_0x3ffa=function(){return _0x4b4081;};return _0x3ffa();}db[_0x2f6acb(0x1c3)](_0x2f6acb(0x1d6))['on'](_0x2f6acb(0x1c9),_0x30d28c=>{const _0x53db26=_0x2f6acb,_0x153df4=document[_0x53db26(0x1d3)](_0x53db26(0x1d8));_0x153df4[_0x53db26(0x1bc)]='',_0x30d28c[_0x53db26(0x1b1)](_0x431b3f=>{const _0x4b9d5c=_0x53db26,_0x2eff66=_0x431b3f['val'](),_0x318c51=_0x431b3f[_0x4b9d5c(0x1cb)],_0x1c68f6=_0x4b9d5c(0x1af)+_0x2eff66[_0x4b9d5c(0x1c5)]+'\x22\x20class=\x22img-thumbnail\x22\x20onerror=\x22this.src=\x27https://via.placeholder.com/100\x27\x22/></td>\x0a\x20\x20\x20\x20\x20\x20<td>'+_0x2eff66[_0x4b9d5c(0x1cd)]+_0x4b9d5c(0x1b5)+formatRupiah(_0x2eff66['nominal'])+'</td>\x0a\x20\x20\x20\x20\x20\x20<td>'+_0x2eff66[_0x4b9d5c(0x1c6)]+_0x4b9d5c(0x1ce)+_0x2eff66[_0x4b9d5c(0x1dd)]+'\x22\x20target=\x22_blank\x22>'+_0x2eff66['nomer']+_0x4b9d5c(0x1d0)+_0x318c51+_0x4b9d5c(0x1bd);_0x153df4[_0x4b9d5c(0x1bc)]+=_0x1c68f6;});});function deleteRipper(_0x3c6883){const _0x5323a0=_0x2f6acb;confirm(_0x5323a0(0x1b2))&&db['ref'](_0x5323a0(0x1c7)+_0x3c6883)[_0x5323a0(0x1cf)]()[_0x5323a0(0x1d5)](()=>{const _0x246755=_0x5323a0;alert(_0x246755(0x1bb));})[_0x5323a0(0x1ab)](_0xd4ffb4=>{const _0x126773=_0x5323a0;console['error'](_0x126773(0x1dc),_0xd4ffb4),alert('Gagal\x20menghapus\x20data.');});}
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

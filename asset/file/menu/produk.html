@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produk - Fahri Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'coc';
+      src: url('/fonts/coc.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'coc', sans-serif;
+      background-color: #1a1a2e;
+      color: white;
+    }
+
+    .card {
+      background-color: #2c2c3e;
+      border: 1px solid #ffc107;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .text-warning {
+      color: #ffc107 !important;
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.5s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h2 class="text-center text-warning mb-4">Semua Produk</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4" id="produkCardContainer">
+      <!-- Card produk akan dimuat lewat JS -->
+    </div>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <script>
+const _0x533286=_0xdf2e;(function(_0x3da77d,_0x2a90d1){const _0x1c7daf=_0xdf2e,_0x1125c7=_0x3da77d();while(!![]){try{const _0x2cd8d7=-parseInt(_0x1c7daf(0x139))/0x1*(parseInt(_0x1c7daf(0x135))/0x2)+parseInt(_0x1c7daf(0x13c))/0x3+parseInt(_0x1c7daf(0x121))/0x4*(parseInt(_0x1c7daf(0x11b))/0x5)+-parseInt(_0x1c7daf(0x12d))/0x6*(parseInt(_0x1c7daf(0x134))/0x7)+-parseInt(_0x1c7daf(0x123))/0x8*(parseInt(_0x1c7daf(0x132))/0x9)+parseInt(_0x1c7daf(0x129))/0xa+-parseInt(_0x1c7daf(0x125))/0xb*(-parseInt(_0x1c7daf(0x11e))/0xc);if(_0x2cd8d7===_0x2a90d1)break;else _0x1125c7['push'](_0x1125c7['shift']());}catch(_0x13b37c){_0x1125c7['push'](_0x1125c7['shift']());}}}(_0x3889,0x198ba));function _0xdf2e(_0x278ff4,_0x1f6e32){const _0x388930=_0x3889();return _0xdf2e=function(_0xdf2e77,_0x252779){_0xdf2e77=_0xdf2e77-0x117;let _0x30aa4a=_0x388930[_0xdf2e77];return _0x30aa4a;},_0xdf2e(_0x278ff4,_0x1f6e32);}const firebaseConfig={'apiKey':_0x533286(0x11a),'authDomain':_0x533286(0x122),'projectId':_0x533286(0x118),'databaseURL':'https://fahristore-6826b-default-rtdb.firebaseio.com','storageBucket':'fahristore-6826b.appspot.com','messagingSenderId':_0x533286(0x11f),'appId':_0x533286(0x11c)};firebase[_0x533286(0x128)](firebaseConfig);function _0x3889(){const _0x3a54b1=['appendChild','val','sold','6GSjKEF','once','col','ref','status','112041umRlYy','value','344092aznthx','72042qHOAMn','akun','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22text-warning\x22>Rp\x20','getElementById','5eEHfvI','danger','success','205050rgubfg','createElement','produk','database','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','className','fahristore-6826b','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22badge\x20bg-','AIzaSyCdEHS5l3KBhYDCiw2OpFn_2vThBiXh0AQ','9105wPeTZJ','1:77190526090:web:0ddef0198bf71234ee2973','img','552264lGAkWJ','77190526090','div','48jCXbQB','fahristore-6826b.firebaseapp.com','72GnUojw','forEach','66RxOuyL','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x20h-100\x20text-white\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','spek','initializeApp','796020AFFysP'];_0x3889=function(){return _0x3a54b1;};return _0x3889();}const db=firebase[_0x533286(0x13f)](),container=document[_0x533286(0x138)]('produkCardContainer');db[_0x533286(0x130)](_0x533286(0x13e))[_0x533286(0x12e)](_0x533286(0x133),_0x7d897d=>{const _0x2018a8=_0x533286;_0x7d897d[_0x2018a8(0x124)](_0x387926=>{const _0xca03fd=_0x2018a8,_0x467d47=_0x387926[_0xca03fd(0x12b)](),_0x33573e=document[_0xca03fd(0x13d)](_0xca03fd(0x120));_0x33573e[_0xca03fd(0x117)]=_0xca03fd(0x12f),_0x33573e['innerHTML']=_0xca03fd(0x126)+_0x467d47[_0xca03fd(0x11d)]+'\x22\x20class=\x22card-img-top\x22\x20alt=\x22Produk\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-body\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h5\x20class=\x22card-title\x22>Akun:\x20'+_0x467d47[_0xca03fd(0x136)]+'</h5>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22card-text\x22>'+_0x467d47[_0xca03fd(0x127)]+_0xca03fd(0x137)+_0x467d47['harga']+_0xca03fd(0x119)+(_0x467d47[_0xca03fd(0x131)]===_0xca03fd(0x12c)?_0xca03fd(0x13a):_0xca03fd(0x13b))+'\x22>'+_0x467d47['status']+_0xca03fd(0x140),container[_0xca03fd(0x12a)](_0x33573e);});});
+  </script>
+</body>
+</html>

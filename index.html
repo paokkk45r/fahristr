@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAHRI STORE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #232e42;
+      color: white;
+      font-family: 'coc';
+    }
+
+    @font-face {
+      font-family: 'coc';
+      src: url(fonts/coc.ttf) format('truetype');
+    }
+
+    .marquee {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 5px;
+      font-weight: bold;
+    }
+
+    nav a {
+      border: 2px solid #ffcc00;
+      margin: 5px;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      transition: right 0.3s ease;
+      z-index: 9999;
+    }
+
+    .sidebar.active {
+      right: 0;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .zoom-hover:hover {
+      transform: scale(1.05);
+      transition: 0.3s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="marquee">
+    <marquee>Selamat datang di FAHRI STORE - Toko terpercaya, aman, dan murah!</marquee>
+  </div>
+
+  <nav class="d-flex justify-content-center bg-dark py-2">
+    <a href="/index.html" class="text-warning text-decoration-none">Beranda</a>
+    <a href="/iden.html" class="text-warning text-decoration-none">Identitas Kami</a>
+    <a href="#" class="text-warning text-decoration-none" onclick="toggleSidebar()">Login Admin</a>
+  </nav>
+
+  <div class="container my-4 fade-in-up">
+    <img src="asset/landscape.png" class="img-fluid rounded border border-warning zoom-hover" alt="Landscape" />
+  </div>
+
+  <div class="text-center text-white">
+    <h2 class="fade-in-up">W E L C O M E</h2>
+    <h3 class="fade-in-up">T O</h3>
+    <h2 class="text-warning fade-in-up">FAHRI STORE</h2>
+    <h5 class="mt-3 fade-in-up">Kenapa harus FAHRI STORE?</h5>
+  </div>
+
+  <div class="container my-4 fade-in-up">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col">
+        <div class="card text-center zoom-hover">
+          <div class="card-body">
+            <i class="bi bi-shield-lock fs-1 text-warning"></i>
+            <h5 class="card-title">Aman</h5>
+            <p class="card-text">FAHRI STORE selalu aman 100%.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-center zoom-hover">
+          <div class="card-body">
+            <i class="bi bi-hand-thumbs-up fs-1 text-warning"></i>
+            <h5 class="card-title">Amanah</h5>
+            <p class="card-text">FAHRI STORE akan selalu amanah.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-center zoom-hover">
+          <div class="card-body">
+            <i class="bi bi-tag fs-1 text-warning"></i>
+            <h5 class="card-title">Murah</h5>
+            <p class="card-text">Harga lebih murah dan sesuai.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-center zoom-hover">
+          <div class="card-body">
+            <i class="bi bi-lightning-charge fs-1 text-warning"></i>
+            <h5 class="card-title">Fast</h5>
+            <p class="card-text">Pelayanan cepat dan tanggap 24/7.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container border border-warning rounded p-4 mb-5 fade-in-up">
+  <h2 class="text-center text-warning mb-4">MENU FAHRI STORE</h2>
+  <div class="row row-cols-1 row-cols-md-5 g-3 text-center">
+
+    <div class="col">
+      <a href="/asset/file/menu/produk.html" class="text-decoration-none text-white">
+        <div class="card zoom-hover">
+          <div class="card-body">
+            <i class="bi bi-box-seam fs-2 text-warning"></i>
+            <p>Produk</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="/asset/file/menu/list.html" class="text-decoration-none text-white">
+        <div class="card zoom-hover">
+          <div class="card-body">
+            <i class="bi bi-person-lines-fill fs-2 text-warning"></i>
+            <p>List Admin</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="/asset/file/menu/top.html" class="text-decoration-none text-white">
+        <div class="card zoom-hover">
+          <div class="card-body">
+            <i class="bi bi-wallet2 fs-2 text-warning"></i>
+            <p>Topup</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="/asset/file/menu/hubungi.html" class="text-decoration-none text-white">
+        <div class="card zoom-hover">
+          <div class="card-body">
+            <i class="bi bi-chat-dots fs-2 text-warning"></i>
+            <p>Hubungi Kami</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="/asset/file/menu/are.html" class="text-decoration-none text-white">
+        <div class="card zoom-hover">
+          <div class="card-body">
+            <i class="bi bi-emoji-angry fs-2 text-warning"></i>
+            <p>Area Ripper</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- SIDEBAR LOGIN -->
+  <div id="sidebar" class="sidebar">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h4 class="text-warning">Login Admin</h4>
+      <i class="bi bi-x-lg close-btn" onclick="toggleSidebar()"></i>
+    </div>
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" required>
+      </div>
+      <button type="submit" class="btn btn-warning w-100">Login</button>
+    </form>
+    <div id="loginMessage" class="mt-3 text-danger"></div>
+  </div>
+
+  <!-- Firebase & Script -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <script>
+function _0x4c5d(){const _0x55e94d=['location','innerText','sidebar','loginForm','Login\x20gagal:\x20','582263GHRpRq','fahristore-6826b.appspot.com','/asset/file/dashboardadmin.html','getElementById','toggle','fahristore-6826b.firebaseapp.com','initializeApp','23909848iLfmuV','value','282jLZDin','7388754kxNxnc','classList','href','873340Rfzver','catch','6646724eealCt','47704omfRDM','9FKDSXe','active','message','1:77190526090:web:0ddef0198bf71234ee2973','822082PHHlZg','password','77190526090','fahristore-6826b','loginMessage','email'];_0x4c5d=function(){return _0x55e94d;};return _0x4c5d();}const _0x30f37d=_0x3b65;(function(_0x2ca039,_0x543e4c){const _0x316bb0=_0x3b65,_0x28f552=_0x2ca039();while(!![]){try{const _0x45f8f6=parseInt(_0x316bb0(0x17e))/0x1+-parseInt(_0x316bb0(0x173))/0x2+-parseInt(_0x316bb0(0x187))/0x3*(-parseInt(_0x316bb0(0x16e))/0x4)+parseInt(_0x316bb0(0x18b))/0x5+parseInt(_0x316bb0(0x188))/0x6+parseInt(_0x316bb0(0x16d))/0x7+-parseInt(_0x316bb0(0x185))/0x8*(parseInt(_0x316bb0(0x16f))/0x9);if(_0x45f8f6===_0x543e4c)break;else _0x28f552['push'](_0x28f552['shift']());}catch(_0x1cff63){_0x28f552['push'](_0x28f552['shift']());}}}(_0x4c5d,0xa0efa));function toggleSidebar(){const _0x27c123=_0x3b65,_0xfc5ebc=document[_0x27c123(0x181)](_0x27c123(0x17b));_0xfc5ebc[_0x27c123(0x189)][_0x27c123(0x182)](_0x27c123(0x170));}const firebaseConfig={'apiKey':'AIzaSyCdEHS5l3KBhYDCiw2OpFn_2vThBiXh0AQ','authDomain':_0x30f37d(0x183),'projectId':_0x30f37d(0x176),'storageBucket':_0x30f37d(0x17f),'messagingSenderId':_0x30f37d(0x175),'appId':_0x30f37d(0x172)};function _0x3b65(_0x5f1ea1,_0x3ed7c5){const _0x4c5dbf=_0x4c5d();return _0x3b65=function(_0x3b65d5,_0x4af7f5){_0x3b65d5=_0x3b65d5-0x16d;let _0x2e035c=_0x4c5dbf[_0x3b65d5];return _0x2e035c;},_0x3b65(_0x5f1ea1,_0x3ed7c5);}firebase[_0x30f37d(0x184)](firebaseConfig);const auth=firebase['auth']();document['getElementById'](_0x30f37d(0x17c))['addEventListener']('submit',function(_0x565ca6){const _0x2e3c63=_0x30f37d;_0x565ca6['preventDefault']();const _0x373ba9=document[_0x2e3c63(0x181)](_0x2e3c63(0x178))[_0x2e3c63(0x186)],_0x8ca10a=document[_0x2e3c63(0x181)](_0x2e3c63(0x174))[_0x2e3c63(0x186)];auth['signInWithEmailAndPassword'](_0x373ba9,_0x8ca10a)['then'](_0x26c330=>{const _0x142790=_0x2e3c63;document[_0x142790(0x181)](_0x142790(0x177))[_0x142790(0x17a)]='Login\x20berhasil!',window[_0x142790(0x179)][_0x142790(0x18a)]=_0x142790(0x180);})[_0x2e3c63(0x18c)](_0x263597=>{const _0x3122f1=_0x2e3c63;document[_0x3122f1(0x181)](_0x3122f1(0x177))[_0x3122f1(0x17a)]=_0x3122f1(0x17d)+_0x263597[_0x3122f1(0x171)];});});
+  </script>
+</body>
+
+</html>

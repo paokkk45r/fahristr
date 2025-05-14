@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produk Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'coc';
+      src: url('/fonts/coc.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'coc', sans-serif;
+      background-color: #1a1a2e;
+      color: white;
+    }
+
+    .sidebar {
+      background-color: #0f0f1f;
+      height: 100vh;
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      color: #ffc107;
+      text-decoration: none;
+      display: block;
+      padding: 10px 15px;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #ffc107;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #2c2c3e;
+      border: 1px solid #ffc107;
+    }
+
+    img {
+      width: 100px;
+      height: auto;
+    }
+
+    .table th, .table td {
+      color: #1a1a2e;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- SIDEBAR -->
+    <div class="col-md-2 sidebar">
+      <h4 class="text-center text-warning mb-4">FAHRI STORE</h4>
+      <a href="/asset/file/dashboardadmin.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
+      <a href="/asset/file/produkadmin.html" class="active"><i class="bi bi-box-seam me-2"></i>Produk</a>
+      <a href="/asset/file/datamodal.html"><i class="bi bi-cash-stack me-2"></i>Data Modal</a>
+              <a href="/asset/file/ripper.html"><i class="bi bi-emoji-angry"></i>Data Ripper</a>
+      <a href="#" onclick="logout()"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="col-md-10 content">
+      <h2 class="text-warning mb-4">Data Produk</h2>
+
+<button onclick="showForm()" class="btn btn-warning mb-3">
+  <i class="bi bi-plus-circle me-2"></i>Tambah Produk
+</button>
+
+
+      <!-- FORM TAMBAH PRODUK -->
+<div class="card mt-4 p-4" id="form-tambah-produk" style="display: none;">
+  <h5 class="mb-3">Form Tambah Produk</h5>
+  <form id="formProduk">
+    <div class="mb-3">
+      <label class="form-label">Link Gambar</label>
+      <input type="text" class="form-control" id="img" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Akun</label>
+      <input type="text" class="form-control" id="akun" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Spek</label>
+      <input type="text" class="form-control" id="spek" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Harga</label>
+      <input type="text" class="form-control" id="harga" required>
+    </div>
+    <button type="submit" class="btn btn-warning">Simpan</button>
+  </form>
+</div>
+
+
+      <div class="card p-3">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="table-warning text-dark">
+              <tr>
+                <th>Gambar</th>
+                <th>Akun</th>
+                <th>Spek</th>
+                <th>Harga</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="produkTableBody">
+              <!-- Data dari Firebase akan dimasukkan di sini -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+const _0x58d5fd=_0x4411;(function(_0x4530f4,_0x2caa27){const _0x7484db=_0x4411,_0x39ce15=_0x4530f4();while(!![]){try{const _0xf0da2=parseInt(_0x7484db(0x115))/0x1*(parseInt(_0x7484db(0x126))/0x2)+parseInt(_0x7484db(0x10a))/0x3+-parseInt(_0x7484db(0x128))/0x4+parseInt(_0x7484db(0x10f))/0x5+-parseInt(_0x7484db(0x110))/0x6+-parseInt(_0x7484db(0x10e))/0x7*(-parseInt(_0x7484db(0x135))/0x8)+-parseInt(_0x7484db(0x125))/0x9;if(_0xf0da2===_0x2caa27)break;else _0x39ce15['push'](_0x39ce15['shift']());}catch(_0x4e70d7){_0x39ce15['push'](_0x39ce15['shift']());}}}(_0x462f,0xb2666));const firebaseConfig={'apiKey':_0x58d5fd(0x116),'authDomain':_0x58d5fd(0x122),'projectId':_0x58d5fd(0x12c),'storageBucket':'fahristore-6826b.appspot.com','messagingSenderId':_0x58d5fd(0x118),'appId':_0x58d5fd(0x11c),'databaseURL':_0x58d5fd(0x136)};firebase[_0x58d5fd(0x11b)](firebaseConfig);const auth=firebase[_0x58d5fd(0x10d)](),db=firebase['database']();auth[_0x58d5fd(0x138)](_0xf7fe2=>{const _0x452724=_0x58d5fd;!_0xf7fe2&&(window[_0x452724(0x127)][_0x452724(0x119)]=_0x452724(0x102));});function logout(){const _0x513306=_0x58d5fd;auth[_0x513306(0x11e)]()['then'](()=>{const _0x249e2a=_0x513306;window[_0x249e2a(0x127)]['href']=_0x249e2a(0x102);});}const tableBody=document[_0x58d5fd(0x130)](_0x58d5fd(0x11d));db[_0x58d5fd(0x107)](_0x58d5fd(0x12f))[_0x58d5fd(0x121)](_0x58d5fd(0x13b),_0xfa0d19=>{const _0x519c7f=_0x58d5fd;tableBody[_0x519c7f(0x12d)]='',_0xfa0d19[_0x519c7f(0x134)](_0x24a085=>{const _0x589518=_0x519c7f,_0x7b19e4=_0x24a085['val'](),_0x232c6c=document[_0x589518(0x103)]('tr');_0x232c6c[_0x589518(0x12d)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td><img\x20src=\x22'+_0x7b19e4[_0x589518(0x131)]+_0x589518(0x106)+_0x7b19e4[_0x589518(0x137)]+_0x589518(0x11a)+_0x7b19e4[_0x589518(0x109)]+_0x589518(0x104)+_0x7b19e4[_0x589518(0x133)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x7b19e4[_0x589518(0x11f)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-sm\x20btn-warning\x22\x20onclick=\x22editStatus(\x27'+_0x24a085[_0x589518(0x12e)]+_0x589518(0x124)+_0x7b19e4['status']+_0x589518(0x111)+_0x24a085[_0x589518(0x12e)]+'\x27)\x22>Delete</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20',tableBody['appendChild'](_0x232c6c);});});function editStatus(_0x4561f7,_0x442c50){const _0x4be902=_0x58d5fd,_0x7e75c3=prompt(_0x4be902(0x129),_0x442c50);_0x7e75c3&&(db[_0x4be902(0x107)](_0x4be902(0x13c)+_0x4561f7)[_0x4be902(0x114)]({'status':_0x7e75c3}),location[_0x4be902(0x105)]());}function _0x462f(){const _0x44f17e=['ref','catch','spek','3384612fIPNZh','display','Produk\x20berhasil\x20dihapus.','auth','70MmseWf','6667795sUErSY','4818672UUctoU','\x27)\x22>Edit\x20Status</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-sm\x20btn-danger\x22\x20onclick=\x22deleteProduk(\x27','belum','formProduk','update','177vGCRpJ','AIzaSyCdEHS5l3KBhYDCiw2OpFn_2vThBiXh0AQ','Apakah\x20Anda\x20yakin\x20ingin\x20menghapus\x20produk\x20ini?','77190526090','href','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td>','initializeApp','1:77190526090:web:0ddef0198bf71234ee2973','produkTableBody','signOut','status','Gagal\x20menghapus\x20produk:\x20','once','fahristore-6826b.firebaseapp.com','reset','\x27,\x20\x27','21723633WWxubC','13972GxvMtk','location','3930080FaJlie','Masukkan\x20status\x20baru\x20(sold/belum):','addEventListener','preventDefault','fahristore-6826b','innerHTML','key','produk','getElementById','img','remove','harga','forEach','985448MIulqt','https://fahristore-6826b-default-rtdb.firebaseio.com','akun','onAuthStateChanged','block','style','value','produk/','/index.html','createElement','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td>Rp\x20','reload','\x22\x20class=\x22img-fluid\x22></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td>'];_0x462f=function(){return _0x44f17e;};return _0x462f();}const produkRef=firebase['database']()['ref'](_0x58d5fd(0x12f));function showForm(){const _0x3e908b=_0x58d5fd;document[_0x3e908b(0x130)]('form-tambah-produk')[_0x3e908b(0x13a)][_0x3e908b(0x10b)]=_0x3e908b(0x139);}function _0x4411(_0x57832f,_0x36d485){const _0x462f8f=_0x462f();return _0x4411=function(_0x441191,_0x5524d8){_0x441191=_0x441191-0x102;let _0x210684=_0x462f8f[_0x441191];return _0x210684;},_0x4411(_0x57832f,_0x36d485);}document[_0x58d5fd(0x130)](_0x58d5fd(0x113))[_0x58d5fd(0x12a)]('submit',function(_0x49d81e){const _0xa1b449=_0x58d5fd;_0x49d81e[_0xa1b449(0x12b)]();const _0x53cc80={'img':document[_0xa1b449(0x130)](_0xa1b449(0x131))['value'],'akun':document['getElementById'](_0xa1b449(0x137))[_0xa1b449(0x13b)],'spek':document[_0xa1b449(0x130)](_0xa1b449(0x109))[_0xa1b449(0x13b)],'harga':document[_0xa1b449(0x130)]('harga')['value'],'status':_0xa1b449(0x112)};produkRef['push'](_0x53cc80)['then'](()=>{const _0x4413ad=_0xa1b449;alert('Produk\x20berhasil\x20ditambahkan!'),document['getElementById'](_0x4413ad(0x113))[_0x4413ad(0x123)](),document['getElementById']('form-tambah-produk')[_0x4413ad(0x13a)][_0x4413ad(0x10b)]='none';});});function deleteProduk(_0x148cab){const _0x25b263=_0x58d5fd;confirm(_0x25b263(0x117))&&db[_0x25b263(0x107)](_0x25b263(0x13c)+_0x148cab)[_0x25b263(0x132)]()['then'](()=>{const _0x54b869=_0x25b263;alert(_0x54b869(0x10c)),location['reload']();})[_0x25b263(0x108)](_0x41b440=>{const _0x19ef15=_0x25b263;alert(_0x19ef15(0x120)+_0x41b440['message']);});}
+</script>
+
+</body>
+</html>

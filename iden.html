@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identitas Kami - FAHRI STORE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #232e42;
+      color: white;
+      font-family: 'coc';
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @font-face {
+      font-family: 'coc';
+      src: url(fonts/coc.ttf) format('truetype');
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #ffcc00;
+      pointer-events: none;
+    }
+
+    .container-info {
+      max-width: 600px;
+      margin: auto;
+      border: 2px solid #ffcc00;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .form-control::placeholder {
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body oncontextmenu="return false" onkeydown="return false" ondragstart="return false" onselectstart="return false">
+
+  <script>
+    // Mencegah shortcut tertentu
+    document.addEventListener("keydown", function (e) {
+      if (
+        e.ctrlKey &&
+        (e.key === "s" || e.key === "u" || e.key === "c" || e.key === "i" || e.key === "j")
+      ) {
+        e.preventDefault();
+      }
+
+      if (e.key === "PrintScreen") {
+        navigator.clipboard.writeText("Screenshot dinonaktifkan!").then(() => {
+          alert("Maaf, tidak dapat mengambil screenshot.");
+        });
+      }
+    });
+
+    // Deteksi dan blank layar saat PrintScreen (opsional & eksperimental)
+    setInterval(() => {
+      const input = document.createElement("input");
+      input.setAttribute("value", "Don't screenshot!");
+      input.setAttribute("readonly", "");
+      input.style.position = "absolute";
+      input.style.left = "-9999px";
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+    }, 3000);
+  </script>
+
+  <div class="container text-center mt-5">
+    <img src="/asset/fhri.jpeg" alt="Profile" class="profile-img mb-3" draggable="false">
+    <div class="container-info">
+      <h3 class="text-warning">FAHRI STORE</h3>
+      <p><i class="bi bi-telephone-fill"></i> 0896-0131-4023</p>
+      <p><i class="bi bi-envelope-fill"></i> muhammadfauri19@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="container mt-4" style="max-width: 800px;">
+    <div class="ratio ratio-16x9">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.847362898444!2d110.45585327443182!3d-7.699524376253696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5c71bea341c1%3A0x67623aa7c1a3acd3!2sPelangi%20Playstation!5e0!3m2!1sid!2sid!4v1747199899220!5m2!1sid!2sid"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+</body>
+
+</html>

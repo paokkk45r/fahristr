@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hubungi Kami - Fahri Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'coc';
+      src: url('/fonts/coc.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'coc', sans-serif;
+      background-color: #1a1a2e;
+      color: white;
+    }
+
+    .contact-form {
+      background-color: #2c2c3e;
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid #ffc107;
+    }
+
+    .form-control,
+    .form-select {
+      background-color: #3c3c4f;
+      color: white;
+      border: none;
+    }
+
+    .form-control::placeholder {
+      color: #bbb;
+    }
+
+    .btn-warning {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h2 class="text-center text-warning mb-4">Hubungi Kami</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="contact-form">
+          <form onsubmit="kirimPesan(event)">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama" placeholder="Masukkan nama Anda" required />
+            </div>
+            <div class="mb-3">
+              <label for="nomor" class="form-label">Nomor WhatsApp</label>
+              <input type="text" class="form-control" id="nomor" placeholder="08xxxx" required />
+            </div>
+            <div class="mb-3">
+              <label for="pesan" class="form-label">Pesan</label>
+              <textarea class="form-control" id="pesan" rows="4" placeholder="Tulis pesan Anda..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning w-100">
+              <i class="bi bi-send-fill"></i> Kirim Pesan
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+(function(_0x10fb4f,_0x3c375d){const _0x15e784=_0x47f9,_0x117334=_0x10fb4f();while(!![]){try{const _0x2ed83e=parseInt(_0x15e784(0x77))/0x1*(-parseInt(_0x15e784(0x7f))/0x2)+parseInt(_0x15e784(0x7c))/0x3+-parseInt(_0x15e784(0x76))/0x4*(parseInt(_0x15e784(0x83))/0x5)+-parseInt(_0x15e784(0x82))/0x6+parseInt(_0x15e784(0x80))/0x7+parseInt(_0x15e784(0x85))/0x8*(-parseInt(_0x15e784(0x84))/0x9)+parseInt(_0x15e784(0x79))/0xa;if(_0x2ed83e===_0x3c375d)break;else _0x117334['push'](_0x117334['shift']());}catch(_0x5aef3c){_0x117334['push'](_0x117334['shift']());}}}(_0x29d0,0xca66a));function _0x47f9(_0x219e32,_0x53726f){const _0x29d0ab=_0x29d0();return _0x47f9=function(_0x47f9d9,_0x490dcd){_0x47f9d9=_0x47f9d9-0x73;let _0x2605ee=_0x29d0ab[_0x47f9d9];return _0x2605ee;},_0x47f9(_0x219e32,_0x53726f);}function _0x29d0(){const _0x194b45=['preventDefault','getElementById','4uTAOcj','1jMVjdU','nama','23817470UKNvhQ','https://wa.me/6289601314023?text=Halo%20Admin%2C%20saya%20','open','2037351KqQkNx','value',')%0A','2856370GVzmmR','3051769zCEyLl','nomor','6355170NUammL','337735jrfFwt','203166whDJuo','40dEVIvy','_blank','pesan'];_0x29d0=function(){return _0x194b45;};return _0x29d0();}function kirimPesan(_0x493643){const _0x2d2e40=_0x47f9;_0x493643[_0x2d2e40(0x74)]();const _0x46d496=document[_0x2d2e40(0x75)](_0x2d2e40(0x78))['value'],_0x1048fa=document['getElementById'](_0x2d2e40(0x81))['value'],_0x2849ee=document[_0x2d2e40(0x75)](_0x2d2e40(0x73))[_0x2d2e40(0x7d)],_0x51c3fd=_0x2d2e40(0x7a)+_0x46d496+'%20('+_0x1048fa+_0x2d2e40(0x7e)+encodeURIComponent(_0x2849ee);window[_0x2d2e40(0x7b)](_0x51c3fd,_0x2d2e40(0x86));}
+  </script>
+</body>
+</html>
