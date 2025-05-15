@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Testimoni - FAHRI STORE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #1f2a36;
+      font-family: 'coc';
+      color: white;
+    }
+
+    @font-face {
+      font-family: 'coc';
+      src: url('/fonts/coc.ttf') format('truetype');
+    }
+
+    .navbar {
+      background-color: #232e42;
+    }
+
+    .card {
+      background-color: #2c3e50;
+      border: 2px solid #ffcc00;
+      border-radius: 15px;
+      color: white;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      border-top-left-radius: 13px;
+      border-top-right-radius: 13px;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .badge-metode {
+      background-color: #ffcc00;
+      color: black;
+      font-size: 0.8rem;
+    }
+
+    h2 {
+      color: #ffcc00;
+      font-family: 'coc';
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2 class="text-center mb-4">Testimoni Pembeli</h2>
+    <div class="row" id="testimoniContainer">
+      <!-- Testimoni cards akan muncul di sini -->
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCdEHS5l3KBhYDCiw2OpFn_2vThBiXh0AQ",
+      authDomain: "fahristore-6826b.firebaseapp.com",
+      projectId: "fahristore-6826b",
+      storageBucket: "fahristore-6826b.appspot.com",
+      messagingSenderId: "77190526090",
+      appId: "1:77190526090:web:0ddef0198bf71234ee2973"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    function loadTestimoni() {
+      const container = document.getElementById('testimoniContainer');
+      db.ref("testimoni").once("value", snapshot => {
+        container.innerHTML = "";
+        if (!snapshot.exists()) {
+          container.innerHTML = '<p class="text-center text-white">Belum ada testimoni.</p>';
+          return;
+        }
+
+        snapshot.forEach(child => {
+          const item = child.val();
+          const card = document.createElement('div');
+          card.className = 'col-md-4 mb-4';
+          card.innerHTML = `
+            <div class="card h-100 shadow">
+              <img src="${item.img}" class="card-img-top" alt="Testimoni">
+              <div class="card-body">
+                <h5 class="card-title text-warning">${item.sold}</h5>
+                <p class="card-text">${item.diskripsi}</p>
+                <span class="badge badge-metode">${item.Metode.toUpperCase()}</span>
+              </div>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      });
+    }
+
+    loadTestimoni();
+  </script>
+</body>
+
+</html>
