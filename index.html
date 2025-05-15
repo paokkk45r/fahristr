@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>FAHRI STORE Maintenance</title>
+  <title>Maintenance - FAHRI STORE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -16,25 +16,12 @@
       background-color: #1a1a2e;
       color: #ffc107;
       font-family: 'coc', sans-serif;
-      height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      overflow: hidden;
-    }
-
-    .container-shake {
-      animation: shake 0.6s infinite;
-    }
-
-    @keyframes shake {
-      0% { transform: translate(0px, 0px); }
-      20% { transform: translate(-5px, 5px); }
-      40% { transform: translate(5px, -5px); }
-      60% { transform: translate(-5px, -5px); }
-      80% { transform: translate(5px, 5px); }
-      100% { transform: translate(0px, 0px); }
+      flex-direction: column;
     }
 
     .icon {
@@ -43,15 +30,11 @@
     }
 
     h1 {
-      font-size: 2.8rem;
-      color: #ffc107;
-      text-shadow: 2px 2px #000;
+      font-size: 2.5rem;
     }
 
     p {
-      font-size: 1.2rem;
-      color: #fff;
-      opacity: 0.85;
+      color: #ffffffb0;
     }
 
     .btn-home {
@@ -60,10 +43,10 @@
   </style>
 </head>
 <body>
-  <div class="container-shake">
-    <div class="icon"><i class="bi bi-exclamation-triangle-fill text-danger"></i></div>
-    <h1>FAHRI STORE MAINTENANCE</h1>
-    <p>Situs sedang dalam pemeliharaan atau pengembangan. Silakan kembali beberapa saat lagi.</p>
+  <div>
+    <div class="icon"><i class="bi bi-tools"></i></div>
+    <h1>FAHRI STORE Maintenance</h1>
+    <p>Situs sedang dalam pemeliharaan atau pengembangan. Silakan kembali nanti.<br>Terima kasih atas kesabaran Anda!</p>
     <a href="/index.html" class="btn btn-warning btn-home"><i class="bi bi-house-door"></i> Kembali ke Beranda</a>
   </div>
 
