@@ -69,47 +69,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
   <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyCdEHS5l3KBhYDCiw2OpFn_2vThBiXh0AQ",
-      authDomain: "fahristore-6826b.firebaseapp.com",
-      projectId: "fahristore-6826b",
-      storageBucket: "fahristore-6826b.appspot.com",
-      messagingSenderId: "77190526090",
-      appId: "1:77190526090:web:0ddef0198bf71234ee2973"
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
-
-    function loadTestimoni() {
-      const container = document.getElementById('testimoniContainer');
-      db.ref("testimoni").once("value", snapshot => {
-        container.innerHTML = "";
-        if (!snapshot.exists()) {
-          container.innerHTML = '<p class="text-center text-white">Belum ada testimoni.</p>';
-          return;
-        }
-
-        snapshot.forEach(child => {
-          const item = child.val();
-          const card = document.createElement('div');
-          card.className = 'col-md-4 mb-4';
-          card.innerHTML = `
-            <div class="card h-100 shadow">
-              <img src="${item.img}" class="card-img-top" alt="Testimoni">
-              <div class="card-body">
-                <h5 class="card-title text-warning">${item.sold}</h5>
-                <p class="card-text">${item.diskripsi}</p>
-                <span class="badge badge-metode">${item.Metode.toUpperCase()}</span>
-              </div>
-            </div>
-          `;
-          container.appendChild(card);
-        });
-      });
-    }
-
-    loadTestimoni();
+const _0x22cf92=_0x2075;(function(_0x491d03,_0x57ec2b){const _0xabd6ff=_0x2075,_0x3a74e0=_0x491d03();while(!![]){try{const _0xb0864c=parseInt(_0xabd6ff(0xee))/0x1+parseInt(_0xabd6ff(0xfd))/0x2+-parseInt(_0xabd6ff(0x10b))/0x3+parseInt(_0xabd6ff(0xf1))/0x4*(-parseInt(_0xabd6ff(0x109))/0x5)+parseInt(_0xabd6ff(0xf3))/0x6+parseInt(_0xabd6ff(0x101))/0x7+-parseInt(_0xabd6ff(0xeb))/0x8;if(_0xb0864c===_0x57ec2b)break;else _0x3a74e0['push'](_0x3a74e0['shift']());}catch(_0x42859f){_0x3a74e0['push'](_0x3a74e0['shift']());}}}(_0x2b2e,0xe046a));const firebaseConfig={'apiKey':_0x22cf92(0x105),'authDomain':'fahristore-6826b.firebaseapp.com','projectId':_0x22cf92(0x104),'storageBucket':_0x22cf92(0xf6),'messagingSenderId':'77190526090','appId':_0x22cf92(0xf0)};firebase[_0x22cf92(0xfb)](firebaseConfig);function _0x2075(_0x35dc70,_0x55d802){const _0x2b2e4b=_0x2b2e();return _0x2075=function(_0x2075a5,_0x3a7205){_0x2075a5=_0x2075a5-0xea;let _0xd8829a=_0x2b2e4b[_0x2075a5];return _0xd8829a;},_0x2075(_0x35dc70,_0x55d802);}const db=firebase[_0x22cf92(0x106)]();function loadTestimoni(){const _0x197048=_0x22cf92,_0x4d71ec=document[_0x197048(0x103)](_0x197048(0xed));db[_0x197048(0x108)]('testimoni')['once']('value',_0x5e1688=>{const _0x23adc1=_0x197048;_0x4d71ec[_0x23adc1(0xf7)]='';if(!_0x5e1688[_0x23adc1(0xff)]()){_0x4d71ec['innerHTML']=_0x23adc1(0xec);return;}_0x5e1688[_0x23adc1(0xea)](_0x41f40a=>{const _0x287d45=_0x23adc1,_0x163061=_0x41f40a[_0x287d45(0xf8)](),_0x33fb6b=document[_0x287d45(0xf4)](_0x287d45(0xf9));_0x33fb6b[_0x287d45(0xfc)]=_0x287d45(0x10a),_0x33fb6b[_0x287d45(0xf7)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x20h-100\x20shadow\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22'+_0x163061[_0x287d45(0x107)]+_0x287d45(0x100)+_0x163061['sold']+_0x287d45(0xf5)+_0x163061[_0x287d45(0xf2)]+_0x287d45(0xfe)+_0x163061['Metode'][_0x287d45(0xfa)]()+_0x287d45(0xef),_0x4d71ec[_0x287d45(0x102)](_0x33fb6b);});});}function _0x2b2e(){const _0x2d0d57=['className','3653094zdTJSv','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22badge\x20badge-metode\x22>','exists','\x22\x20class=\x22card-img-top\x22\x20alt=\x22Testimoni\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-body\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h5\x20class=\x22card-title\x20text-warning\x22>','11355974ElTeBZ','appendChild','getElementById','fahristore-6826b','AIzaSyCdEHS5l3KBhYDCiw2OpFn_2vThBiXh0AQ','database','img','ref','8895VuqmVQ','col-md-4\x20mb-4','2743650WleTJk','forEach','25301072cbMDEP','<p\x20class=\x22text-center\x20text-white\x22>Belum\x20ada\x20testimoni.</p>','testimoniContainer','1590455aNbXgN','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','1:77190526090:web:0ddef0198bf71234ee2973','604nXZKcp','diskripsi','1350978ICnKns','createElement','</h5>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22card-text\x22>','fahristore-6826b.appspot.com','innerHTML','val','div','toUpperCase','initializeApp'];_0x2b2e=function(){return _0x2d0d57;};return _0x2b2e();}loadTestimoni();
   </script>
 </body>
 
