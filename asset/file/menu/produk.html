@@ -75,9 +75,37 @@
   transform: scale(1.1);
   background-color: #ffd700;
 }
+
+.floating-store {
+  position: fixed;
+  bottom: 150px;
+  right: 20px;
+  background-color: #ffc107;
+  color: #232e42;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  text-decoration: none;
+  z-index: 9999;
+  font-size: 28px;
+  transition: transform 0.3s;
+}
+.floating-store:hover {
+  transform: scale(1.1);
+  background-color: #ffd700;
+}
   </style>
 </head>
 <body>
+  <!-- Tombol Store Mengambang -->
+<a href="str.html" class="floating-store" title="Kembali ke Store">
+  <i class="bi bi-shop-window"></i>
+</a>
+
   <!-- Tombol Testimoni Mengambang -->
 <a href="testimoni.html" class="floating-testimoni" title="Lihat Testimoni">
   <i class="bi bi-receipt"></i>
@@ -95,7 +123,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
   <script>
-function _0xae16(_0x58ad4e,_0x37e008){const _0x40b1c7=_0x40b1();return _0xae16=function(_0xae163a,_0x1579b0){_0xae163a=_0xae163a-0x161;let _0x5d86eb=_0x40b1c7[_0xae163a];return _0x5d86eb;},_0xae16(_0x58ad4e,_0x37e008);}const _0x5815aa=_0xae16;function _0x40b1(){const _0x316c9a=['createElement','img','database','72kmPDoH','danger','harga','akun','6VSQuTF','fahristore-6826b','innerHTML','16660240lifvuE','status','</h5>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22card-text\x22>','5734944TKiudu','div','AIzaSyCdEHS5l3KBhYDCiw2OpFn_2vThBiXh0AQ','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22badge\x20bg-','https://fahristore-6826b-default-rtdb.firebaseio.com','77190526090','1433526WeGoST','appendChild','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x20h-100\x20text-white\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','initializeApp','success','produkCardContainer','fahristore-6826b.firebaseapp.com','14925663FAhuZe','value','21585DbtXZZ','fahristore-6826b.appspot.com','708yEBCAa','1667500vfQAxA','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','479843qokDEp'];_0x40b1=function(){return _0x316c9a;};return _0x40b1();}(function(_0x4375e9,_0x5d7ac4){const _0x1be95a=_0xae16,_0x32d372=_0x4375e9();while(!![]){try{const _0x12d903=-parseInt(_0x1be95a(0x176))/0x1+-parseInt(_0x1be95a(0x180))/0x2*(-parseInt(_0x1be95a(0x16a))/0x3)+parseInt(_0x1be95a(0x175))/0x4*(parseInt(_0x1be95a(0x173))/0x5)+parseInt(_0x1be95a(0x164))/0x6+parseInt(_0x1be95a(0x178))/0x7*(-parseInt(_0x1be95a(0x17c))/0x8)+parseInt(_0x1be95a(0x171))/0x9+-parseInt(_0x1be95a(0x161))/0xa;if(_0x12d903===_0x5d7ac4)break;else _0x32d372['push'](_0x32d372['shift']());}catch(_0x2e20a9){_0x32d372['push'](_0x32d372['shift']());}}}(_0x40b1,0xd24d9));const firebaseConfig={'apiKey':_0x5815aa(0x166),'authDomain':_0x5815aa(0x170),'projectId':_0x5815aa(0x181),'databaseURL':_0x5815aa(0x168),'storageBucket':_0x5815aa(0x174),'messagingSenderId':_0x5815aa(0x169),'appId':'1:77190526090:web:0ddef0198bf71234ee2973'};firebase[_0x5815aa(0x16d)](firebaseConfig);const db=firebase[_0x5815aa(0x17b)](),container=document['getElementById'](_0x5815aa(0x16f));db['ref']('produk')['once'](_0x5815aa(0x172),_0x8f7d=>{_0x8f7d['forEach'](_0xfa5bf8=>{const _0x45003a=_0xae16,_0x1387b5=_0xfa5bf8['val'](),_0x5b3b30=document[_0x45003a(0x179)](_0x45003a(0x165));_0x5b3b30['className']='col',_0x5b3b30[_0x45003a(0x182)]=_0x45003a(0x16c)+_0x1387b5[_0x45003a(0x17a)]+'\x22\x20class=\x22card-img-top\x22\x20alt=\x22Produk\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-body\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h5\x20class=\x22card-title\x22>Akun:\x20'+_0x1387b5[_0x45003a(0x17f)]+_0x45003a(0x163)+_0x1387b5['spek']+'</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22text-warning\x22>Rp\x20'+_0x1387b5[_0x45003a(0x17e)]+_0x45003a(0x167)+(_0x1387b5[_0x45003a(0x162)]==='sold'?_0x45003a(0x17d):_0x45003a(0x16e))+'\x22>'+_0x1387b5[_0x45003a(0x162)]+_0x45003a(0x177),container[_0x45003a(0x16b)](_0x5b3b30);});});
+const _0x4b1271=_0x34c8;(function(_0x238336,_0x3c59a1){const _0x535456=_0x34c8,_0x25ef01=_0x238336();while(!![]){try{const _0xc94791=parseInt(_0x535456(0xd8))/0x1*(parseInt(_0x535456(0xe0))/0x2)+-parseInt(_0x535456(0xdb))/0x3*(-parseInt(_0x535456(0xeb))/0x4)+-parseInt(_0x535456(0xe4))/0x5+-parseInt(_0x535456(0xee))/0x6+parseInt(_0x535456(0xf2))/0x7+parseInt(_0x535456(0xcd))/0x8+parseInt(_0x535456(0xd4))/0x9;if(_0xc94791===_0x3c59a1)break;else _0x25ef01['push'](_0x25ef01['shift']());}catch(_0x104ba8){_0x25ef01['push'](_0x25ef01['shift']());}}}(_0x33d1,0x7eb8d));const firebaseConfig={'apiKey':_0x4b1271(0xd0),'authDomain':'fahristore-6826b.firebaseapp.com','projectId':_0x4b1271(0xe7),'databaseURL':_0x4b1271(0xe6),'storageBucket':_0x4b1271(0xe2),'messagingSenderId':_0x4b1271(0xdc),'appId':_0x4b1271(0xd3)};firebase['initializeApp'](firebaseConfig);const db=firebase[_0x4b1271(0xd9)](),container=document[_0x4b1271(0xef)]('produkCardContainer');function _0x33d1(){const _0x4a9560=['</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','className','success','894qpVlLH','spek','fahristore-6826b.appspot.com','akun','4773325ReYpoN','\x22\x20class=\x22card-img-top\x22\x20alt=\x22Produk\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-body\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h5\x20class=\x22card-title\x22>Akun:\x20','https://fahristore-6826b-default-rtdb.firebaseio.com','fahristore-6826b','harga','ref','once','428NAdktQ','img','danger','2133156GWiSaf','getElementById','value','innerHTML','579929zzRPNu','2033648FcszIZ','col','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22text-warning\x22>Rp\x20','AIzaSyCdEHS5l3KBhYDCiw2OpFn_2vThBiXh0AQ','val','status','1:77190526090:web:0ddef0198bf71234ee2973','7930449Znhslu','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22badge\x20bg-','forEach','createElement','1259UAExHE','database','sold','1353WSVBOJ','77190526090'];_0x33d1=function(){return _0x4a9560;};return _0x33d1();}function _0x34c8(_0xc22e3a,_0x2801b9){const _0x33d16c=_0x33d1();return _0x34c8=function(_0x34c84c,_0x64596e){_0x34c84c=_0x34c84c-0xcd;let _0x5e64fe=_0x33d16c[_0x34c84c];return _0x5e64fe;},_0x34c8(_0xc22e3a,_0x2801b9);}db[_0x4b1271(0xe9)]('produk')[_0x4b1271(0xea)](_0x4b1271(0xf0),_0x58e96b=>{const _0x38995a=_0x4b1271;_0x58e96b[_0x38995a(0xd6)](_0x1be637=>{const _0x5ecd85=_0x38995a,_0x11ee1e=_0x1be637[_0x5ecd85(0xd1)](),_0x246235=document[_0x5ecd85(0xd7)]('div');_0x246235[_0x5ecd85(0xde)]=_0x5ecd85(0xce),_0x246235[_0x5ecd85(0xf1)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x20h-100\x20text-white\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22'+_0x11ee1e[_0x5ecd85(0xec)]+_0x5ecd85(0xe5)+_0x11ee1e[_0x5ecd85(0xe3)]+'</h5>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22card-text\x22>'+_0x11ee1e[_0x5ecd85(0xe1)]+_0x5ecd85(0xcf)+_0x11ee1e[_0x5ecd85(0xe8)]+_0x5ecd85(0xd5)+(_0x11ee1e[_0x5ecd85(0xd2)]===_0x5ecd85(0xda)?_0x5ecd85(0xed):_0x5ecd85(0xdf))+'\x22>'+_0x11ee1e[_0x5ecd85(0xd2)]+_0x5ecd85(0xdd),container['appendChild'](_0x246235);});});
   </script>
 </body>
 </html>
